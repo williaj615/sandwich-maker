@@ -14,7 +14,7 @@ const createSandwichOrder = (items) => {
 const createSandwichEvent = () => {
     const selectedBreads = bread.getSelectedBreads();
     console.log('you clicked a button', selectedBreads);
-    createSandwichOrder(selectedBreads);
+    //createSandwichOrder(selectedBreads);
 }
 
 const printOrderButton = () => {

@@ -22,11 +22,7 @@ const createSandwichEvent = () => {
     const selectedCheeses =  cheese.getSelectedCheeses();
     const selectedCondiments =  condiment.getSelectedCondiments();
     const selectedVeggies = veggie.getSelectedVeggies();
-    console.log('you clicked a button', selectedBreads);
-    console.log('you clicked a button', selectedMeats)
-    console.log('you clicked a button', selectedCheeses)
-    console.log('you clicked a button', selectedCondiments)
-    console.log('you clicked a button', selectedVeggies);
+    const sandwichSelections = selectedBreads.concat(selectedMeats, selectedCheeses, selectedCondiments, selectedVeggies)
     createSandwichOrder(sandwichSelections);
     
 

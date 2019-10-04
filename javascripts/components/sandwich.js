@@ -1,7 +1,8 @@
 import utilities from '../helpers/utilities.js'
 import bread from './bread.js'
+import meat from './meat.js'
 
-const sandwichSelections = [bread.getSelectedBreads];
+const sandwichSelections = [bread.getSelectedBreads + meat.getSelectedMeats];
 
 const createSandwichOrder = (items) => {
     let domString2 = '';
@@ -13,8 +14,12 @@ const createSandwichOrder = (items) => {
 
 const createSandwichEvent = () => {
     const selectedBreads = bread.getSelectedBreads();
+    const selectedMeats = meat.getSelectedMeats();
     console.log('you clicked a button', selectedBreads);
-    createSandwichOrder(selectedBreads);
+    console.log('you clicked a button', selectedMeats)
+    createSandwichOrder(sandwichSelections);
+    
+
 }
 
 const printOrderButton = () => {

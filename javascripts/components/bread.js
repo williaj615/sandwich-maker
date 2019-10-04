@@ -21,7 +21,7 @@ const printBreadOptions = () => {
 
 const getSelectedBreads = () => {
     const selectedBreads = [];
-    //get all cheese boxes
+    //get all bread boxes
     const breadCheckboxes = document.getElementsByClassName('bread');
     //put checked ones in an array
     for(let j = 0; j < breadCheckboxes.length; j++){

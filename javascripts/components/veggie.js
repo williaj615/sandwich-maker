@@ -12,11 +12,27 @@ const printVeggieOptions = () => {
     let domString = '';
     for (let i = 0; i < veggies.length; i++) {
      domString += `<div class="form-group form-check">
-    <input type="checkbox" class="form-check-input cheese" id="${veggies[i].id}">
+    <input type="checkbox" class="form-check-input veggie" id="${veggies[i].id}">
     <label class="form-check-label" for="${veggies[i].id}">${veggies[i].name}</label>
   </div>`
     };
     utilities.printToDom('veggie-counter', domString);
 };
 
-export default {printVeggieOptions}
+const getSelectedVeggies = () => {
+    const selectedVeggies = [];
+    //get all veggie boxes
+    const veggieCheckboxes = document.getElementsByClassName('veggie');
+    //put checked ones in an array
+    for(let j = 0; j < veggieCheckboxes.length; j++){
+        for(let k = 0; k < veggies.length; k++){
+          if(veggieCheckboxes[j].checked && veggieCheckboxes[j].id === veggies[k].id){
+            selectedVeggies.push(veggies[k]);
+          }
+        }
+      }
+    //return new array
+    return selectedVeggies;
+}
+
+export default {printVeggieOptions, getSelectedVeggies}

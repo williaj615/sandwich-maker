@@ -12,11 +12,27 @@ const printCondimentOptions = () => {
     let domString = '';
     for (let i = 0; i < condiments.length; i++) {
      domString += `<div class="form-group form-check">
-    <input type="checkbox" class="form-check-input cheese" id="${condiments[i].id}">
+    <input type="checkbox" class="form-check-input condiment" id="${condiments[i].id}">
     <label class="form-check-label" for="${condiments[i].id}">${condiments[i].name}</label>
   </div>`
     };
     utilities.printToDom('condiment-counter', domString);
 }
 
-export default {printCondimentOptions}
+const getSelectedCondiments = () => {
+    const selectedCondiments = [];
+    //get all condiment boxes
+    const condimentCheckboxes = document.getElementsByClassName('condiment');
+    //put checked ones in an array
+    for(let j = 0; j < condimentCheckboxes.length; j++){
+        for(let k = 0; k < condiments.length; k++){
+          if(condimentCheckboxes[j].checked && condimentCheckboxes[j].id === condiments[k].id){
+            selectedCondiments.push(condiments[k]);
+          }
+        }
+      }
+    //return new array
+    return selectedCondiments;
+}
+
+export default {printCondimentOptions, getSelectedCondiments}

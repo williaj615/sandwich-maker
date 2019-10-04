@@ -34,5 +34,4 @@ const getSelectedCheeses = () => {
     //return new array
     return selectedCheeses;
 }
-
 export default {printCheeseOptions, getSelectedCheeses};

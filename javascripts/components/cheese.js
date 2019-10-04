@@ -19,4 +19,20 @@ const printCheeseOptions = () => {
     utilities.printToDom('cheese-counter', domString);
 };
 
-export default {printCheeseOptions};
+const getSelectedCheeses = () => {
+    const selectedCheeses = [];
+    //get all cheese boxes
+    const cheeseCheckboxes = document.getElementsByClassName('cheese');
+    //put checked ones in an array
+    for(let j = 0; j < cheeseCheckboxes.length; j++){
+        for(let k = 0; k < cheeses.length; k++){
+          if(cheeseCheckboxes[j].checked && cheeseCheckboxes[j].id === cheeses[k].id){
+            selectedCheeses.push(cheeses[k]);
+          }
+        }
+      }
+    //return new array
+    return selectedCheeses;
+}
+
+export default {printCheeseOptions, getSelectedCheeses};

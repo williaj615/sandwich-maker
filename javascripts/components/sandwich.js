@@ -11,7 +11,7 @@ import veggie from './veggie.js'
 const createSandwichOrder = (items) => {
     let domString2 = '';
     for(let i = 0; i < items.length; i++) {
-        domString2 += `<h2>${items[i].name}</h2>`
+        domString2 += `<h2>${items[i].name} ${items[i].price}</h2>`
     }
     utilities.printToDom('sandwich-order', domString2);
 }

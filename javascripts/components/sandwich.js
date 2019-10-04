@@ -3,6 +3,7 @@ import bread from './bread.js'
 import meat from './meat.js'
 import cheese from './cheese.js'
 import condiment from './condiment.js'
+import veggie from './veggie.js'
 
 
 //const sandwichSelections = [bread.getSelectedBreads + meat.getSelectedMeats];
@@ -20,10 +21,12 @@ const createSandwichEvent = () => {
     const selectedMeats = meat.getSelectedMeats();
     const selectedCheeses =  cheese.getSelectedCheeses();
     const selectedCondiments =  condiment.getSelectedCondiments();
+    const selectedVeggies = veggie.getSelectedVeggies();
     console.log('you clicked a button', selectedBreads);
     console.log('you clicked a button', selectedMeats)
     console.log('you clicked a button', selectedCheeses)
     console.log('you clicked a button', selectedCondiments)
+    console.log('you clicked a button', selectedVeggies);
     createSandwichOrder(sandwichSelections);
     
 

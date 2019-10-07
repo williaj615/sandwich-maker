@@ -4,9 +4,9 @@
 Use this application to select sandwich ingredients and get a final cost for your sandwich creation.
 
 ## Screenshots
-![Sandwich Maker Preview](screenshots/main_view.png
+![Sandwich Maker Preview](https://raw.githubusercontent.com/williaj615/sandwich-maker/master/screenshots/main_view.png
 )
-![Order Total Preview]( screenshots/orderTotal_view.png
+![Order Total Preview]( https://raw.githubusercontent.com/williaj615/sandwich-maker/master/screenshots/orderTotal_view.png
 ) 
 
 ## How to run

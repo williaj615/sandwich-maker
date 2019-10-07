@@ -9,14 +9,18 @@ import veggie from './veggie.js'
 //const sandwichSelections = [bread.getSelectedBreads + meat.getSelectedMeats];
 
 const createSandwichOrder = (items) => {
-    let domString2 = '';
+    const orderTotal = items.reduce((prev, curr) => prev + curr.price, 0);
+    let domString2 = '<p>Your Sandwich Order!</p>';
     for(let i = 0; i < items.length; i++) {
-        domString2 += `<h2>${items[i].name}</h2>`
+        domString2 += `<h4>${items[i].name} ${items[i].price.toFixed(2)}</h4>`;
     }
+    domString2 += `<hr><h4>Order Total =$${orderTotal.toFixed(2)}</h4>`;
     utilities.printToDom('sandwich-order', domString2);
 }
 
-const createSandwichEvent = () => {
+
+
+const createSandwichEvent = (s) => {
     const selectedBreads = bread.getSelectedBreads();
     const selectedMeats = meat.getSelectedMeats();
     const selectedCheeses =  cheese.getSelectedCheeses();
@@ -24,15 +28,13 @@ const createSandwichEvent = () => {
     const selectedVeggies = veggie.getSelectedVeggies();
     const sandwichSelections = selectedBreads.concat(selectedMeats, selectedCheeses, selectedCondiments, selectedVeggies)
     createSandwichOrder(sandwichSelections);
-    
-
 }
 
 const printOrderButton = () => {
     const domString = '<button id="order-button" class="btn btn-secondary">Make Sandwich</button>';
-    utilities.printToDom('sandwich-order', domString);
+    utilities.printToDom('sandwich-order-button', domString);
     document.getElementById('order-button').addEventListener('click', createSandwichEvent)
-    document.getElementById('order-button').addEventListener('click', sandwichTotalCalculator)
+    document.getElementById('order-button').addEventListener('click', createSandwichOrder)
 }
 
 export default {printOrderButton};

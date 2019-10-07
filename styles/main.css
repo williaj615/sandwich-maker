@@ -1,3 +1,10 @@
 body {
     background-color: cadetblue;
 }
+.order-box {
+    display: flex;
+    justify-content: center;
+}
+#sandwich-order {
+    color: white;
+}

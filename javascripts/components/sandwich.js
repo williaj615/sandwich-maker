@@ -10,9 +10,9 @@ import veggie from './veggie.js'
 
 const createSandwichOrder = (items) => {
     const orderTotal = items.reduce((prev, curr) => prev + curr.price, 0);
-    let domString2 = '<p>Your Sandwich Order!</p>';
+    let domString2 = '<p><h2>Your Sandwich Order!</h2></p>';
     for(let i = 0; i < items.length; i++) {
-        domString2 += `<h4>${items[i].name} ${items[i].price.toFixed(2)}</h4>`;
+        domString2 += `<p>${items[i].name} ${items[i].price.toFixed(2)}</p>`;
     }
     domString2 += `<hr><h4>Order Total =$${orderTotal.toFixed(2)}</h4>`;
     utilities.printToDom('sandwich-order', domString2);
